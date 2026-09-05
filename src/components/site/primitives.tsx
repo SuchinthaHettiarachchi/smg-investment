@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import Link from "next/link";
 
 export function Eyebrow({ children }: { children: React.ReactNode }) {
@@ -20,7 +20,7 @@ export function Reveal({ children, delay = 0, className }: { children: React.Rea
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.8, delay, ease: "easeOut" }}
       className={className}
     >
       {children}
@@ -38,12 +38,12 @@ export function SectionHeader({ eyebrow, heading, paragraph }: { eyebrow: string
   );
 }
 
-export const staggerParent = {
+export const staggerParent: Variants = {
   hidden: { opacity: 0 },
   show: { opacity: 1, transition: { staggerChildren: 0.1 } }
 };
 
-export const staggerChild = {
+export const staggerChild: Variants = {
   hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
 };
