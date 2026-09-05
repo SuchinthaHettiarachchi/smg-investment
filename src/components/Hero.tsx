@@ -1,70 +1,57 @@
 "use client";
 import { motion } from "framer-motion";
-import { HiArrowDown } from "react-icons/hi";
-import Particles from "./Particles";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-10">
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/hero-bg.svg')" }} />
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal-400/80 via-charcoal-300/70 to-charcoal-400/90" />
+    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-charcoal pt-24 pb-10">
+      <div className="absolute inset-0 z-0 opacity-50">
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-gold-500/10 rounded-full blur-[150px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-charcoal-300 rounded-full blur-[120px]" />
       </div>
 
-      <Particles />
-
-      <div className="relative z-10 container-custom text-center px-4 sm:px-6">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
-          <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-gold-500/20 border border-gold-500/30 rounded-full text-gold-300 text-xs sm:text-sm font-medium mb-4 sm:mb-6">
-            Trusted Gold Pawning in Sri Lanka
-          </span>
-        </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 sm:mb-6 leading-tight"
+      <div className="container-custom relative z-10 flex flex-col items-center text-center">
+        <motion.span 
+          initial={{ opacity: 0, y: 20 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-xs font-medium text-white/70 mb-8 backdrop-blur-sm"
         >
-          Get the Financial Support
-          <br className="hidden sm:block" />
-          <span className="gold-gradient-text"> You Need</span>, With the Value
-          <br className="hidden sm:block" />
-          of Your <span className="text-gold-400">Gold</span>
+          Trusted Gold Pawning in Sri Lanka
+        </motion.span>
+        
+        <motion.h1 
+          initial={{ opacity: 0, y: 30 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="heading-massive text-white max-w-5xl"
+        >
+          Financial <span className="gold-text">Support.</span> <br/>
+          With Your <span className="text-white/20">Gold.</span>
         </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+        <motion.p 
+          initial={{ opacity: 0, y: 30 }} 
+          animate={{ opacity: 1, y: 0 }} 
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="max-w-2xl mx-auto text-white/80 text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8 md:mb-10 px-2"
+          className="max-w-xl text-lg text-white/50 leading-relaxed mt-8 mb-10"
         >
-          Over 30 years of trusted service. Secure, transparent, and flexible gold pawning solutions.
+          A trusted gold pawning service, live in minutes. No hidden fees, just secure loans and transparent valuations.
         </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }} 
+          animate={{ opacity: 1, y: 0 }} 
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0"
+          className="flex flex-col sm:flex-row gap-4"
         >
-          <a href="#contact" className="px-6 py-3 sm:px-8 sm:py-4 gold-gradient text-white rounded-full font-semibold text-base sm:text-lg hover:shadow-xl hover:shadow-gold-500/30 transition-all hover:scale-105">
-            Pawn Your Gold Today
+          <a href="#contact" className="px-8 py-4 bg-gold-500 text-charcoal rounded-full font-medium hover:bg-white transition-colors">
+            Pawn Your Gold
           </a>
-          <a href="#services" className="px-6 py-3 sm:px-8 sm:py-4 border-2 border-white/30 text-white rounded-full font-semibold text-base sm:text-lg hover:bg-white/10 transition-all">
-            Learn More
+          <a href="#services" className="px-8 py-4 border border-white/20 text-white rounded-full font-medium hover:bg-white/10 transition-colors">
+            View Services
           </a>
         </motion.div>
       </div>
-
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }} className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-10">
-        <a href="#about" className="flex flex-col items-center gap-2 text-white/60">
-          <span className="text-[10px] sm:text-xs tracking-widest uppercase">Scroll</span>
-          <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
-            <HiArrowDown size={18} />
-          </motion.div>
-        </a>
-      </motion.div>
     </section>
   );
 }

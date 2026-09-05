@@ -5,49 +5,44 @@ import { SERVICES } from "@/constants/data";
 import { HiOutlineShieldCheck, HiOutlineScale, HiOutlineRefresh, HiOutlineCurrencyDollar } from "react-icons/hi";
 
 const iconMap: Record<string, React.ReactNode> = {
-  pawn: <HiOutlineShieldCheck size={24} />,
-  valuation: <HiOutlineScale size={24} />,
-  redeem: <HiOutlineRefresh size={24} />,
-  installment: <HiOutlineCurrencyDollar size={24} />,
+  pawn: <HiOutlineShieldCheck size={32} />,
+  valuation: <HiOutlineScale size={32} />,
+  redeem: <HiOutlineRefresh size={32} />,
+  installment: <HiOutlineCurrencyDollar size={32} />,
 };
 
 export default function Services() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section id="services" className="section-padding bg-charcoal">
+    <section id="services" className="section-padding bg-charcoal border-t border-white/5">
       <div className="container-custom" ref={ref}>
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 xl:gap-20">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="lg:sticky lg:top-28 lg:self-start">
-            <span className="text-gold-500 font-semibold text-xs sm:text-sm tracking-widest uppercase">Our Services</span>
-            <h2 className="heading-primary mt-2 sm:mt-3 mb-4 sm:mb-6 text-white">
-              Reliable Gold Pawning, <span className="gold-gradient-text">Made Simple</span>
-            </h2>
-            <p className="text-white/70 text-sm sm:text-base md:text-lg leading-relaxed">We offer secure and convenient gold pawning solutions with transparent valuations, competitive rates, flexible payments, and professional customer service.</p>
-            <div className="mt-6 sm:mt-8 relative rounded-2xl overflow-hidden">
-              <img src="/images/services-bg.svg" alt="Gold Pawning Services" className="w-full h-48 sm:h-56 lg:h-64 object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-r from-charcoal-400/80 to-transparent" />
-              <div className="absolute inset-0 flex items-center p-5 sm:p-8">
-                <p className="text-white font-heading text-lg sm:text-xl font-bold max-w-xs">Your Gold, Your Financial Freedom</p>
-              </div>
-            </div>
-          </motion.div>
+        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
+          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-500">Our Services</span>
+          <h2 className="heading-primary mt-4 text-white">
+            Reliable Gold Pawning, <span className="gold-text">Simplified</span>
+          </h2>
+        </div>
 
-          <div className="space-y-4 sm:space-y-6">
-            {SERVICES.map((service, i) => (
-              <motion.div key={service.title} initial={{ opacity: 0, x: 30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.5, delay: i * 0.12 }} className="group p-4 sm:p-6 bg-charcoal-400 rounded-xl border border-white/10 hover:border-gold-500/50 hover:bg-charcoal-300 transition-all duration-300">
-                <div className="flex items-start gap-3 sm:gap-5">
-                  <div className="flex-shrink-0 w-10 h-10 sm:w-14 sm:h-14 gold-gradient rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform">
-                    {iconMap[service.icon]}
-                  </div>
-                  <div>
-                    <h3 className="font-heading text-base sm:text-lg lg:text-xl font-bold text-white mb-1 sm:mb-2">{service.title}</h3>
-                    <p className="text-xs sm:text-sm md:text-base text-white/60 leading-relaxed">{service.description}</p>
-                  </div>
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+          {SERVICES.map((service, i) => (
+            <motion.div 
+              key={service.title} 
+              initial={{ opacity: 0, y: 30 }} 
+              animate={inView ? { opacity: 1, y: 0 } : {}} 
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="group relative bg-charcoal-300/50 p-8 md:p-10 rounded-3xl border border-white/10 hover:border-gold-500/30 transition-all duration-300 overflow-hidden"
+            >
+              <div className="absolute -top-20 -right-20 w-40 h-40 bg-gold-500/10 rounded-full blur-2xl group-hover:bg-gold-500/20 transition-colors"></div>
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-gold-500 mb-8 border border-white/10">
+                  {iconMap[service.icon]}
                 </div>
-              </motion.div>
-            ))}
-          </div>
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">{service.title}</h3>
+                <p className="text-white/50 leading-relaxed">{service.description}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

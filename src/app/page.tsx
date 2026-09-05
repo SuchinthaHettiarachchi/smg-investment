@@ -1,13 +1,12 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import AboutUs from "@/components/AboutUs";
-import Services from "@/components/Services";
-import WhyChooseUs from "@/components/WhyChooseUs";
-import HowItWorks from "@/components/HowItWorks";
-import Testimonials from "@/components/Testimonials";
-import ContactUs from "@/components/ContactUs";
-import Footer from "@/components/Footer";
-import ScrollToTop from "@/components/ScrollToTop";
+import { Navbar } from "@/components/site/navbar";
+import { Hero } from "@/components/site/hero";
+import { About } from "@/components/site/about";
+import { Services } from "@/components/site/services";
+import { WhyChooseUs } from "@/components/site/why-choose-us";
+import { HowItWorks } from "@/components/site/how-it-works";
+import { Testimonials } from "@/components/site/testimonials";
+import { Contact } from "@/components/site/contact";
+import { Footer } from "@/components/site/footer";
 
 export default function Home() {
   return (
@@ -15,15 +14,14 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <AboutUs />
+        <About />
         <Services />
         <WhyChooseUs />
         <HowItWorks />
         <Testimonials />
-        <ContactUs />
+        <Contact />
       </main>
       <Footer />
-      <ScrollToTop />
     </>
   );
 }

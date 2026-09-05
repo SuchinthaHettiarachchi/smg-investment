@@ -1,88 +1,77 @@
 @import "tailwindcss";
 
 @theme {
-  --color-gold-50: #FFF9E6;
-  --color-gold-100: #FFF0BF;
-  --color-gold-200: #FFE699;
-  --color-gold-300: #FFDB73;
-  --color-gold-400: #FFD14D;
-  --color-gold-500: #D4AF37;
-  --color-gold-600: #C5A028;
-  --color-gold-700: #A68523;
-  --color-gold-800: #8B7536;
-  --color-gold-900: #6B5A28;
+  --color-gold: #D4AF37;
+  --color-foreground: #0A0A0A;
+  --color-background: #FAF8F5;
+  --color-card: #FFFFFF;
+  --color-secondary: #F5F0E8;
+  --color-muted-foreground: #6B6B6B;
+  --color-border: #E5E1D8;
+  --color-hairline: #E5E1D8;
+  --color-primary: #0A0A0A;
+  --color-primary-foreground: #FAF8F5;
+  --color-accent: #FFF9E6;
 
-  --color-offwhite-50: #FEFEFE;
-  --color-offwhite-100: #FAF8F5;
-  --color-offwhite-200: #F5F0E8;
-  --color-offwhite-300: #EDE5D8;
-
-  --color-charcoal: #2C2C2C;
-  --color-charcoal-50: #4A4A4A;
-  --color-charcoal-100: #3D3D3D;
-  --color-charcoal-200: #333333;
-  --color-charcoal-300: #2C2C2C;
-  --color-charcoal-400: #1A1A1A;
-
-  --font-heading: "Playfair Display", serif;
-  --font-inter: "Inter", sans-serif;
+  --font-sans: var(--font-poppins), sans-serif;
+  --font-display: var(--font-poppins), sans-serif;
 }
 
 @layer base {
   html {
-    scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
   }
   body {
-    background-color: var(--color-offwhite-100);
-    color: var(--color-charcoal);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
     overflow-x: hidden;
+    font-family: var(--font-sans);
   }
   ::selection {
-    background-color: rgba(212, 175, 55, 0.2);
-    color: var(--color-gold-900);
+    background-color: var(--color-gold);
+    color: var(--color-foreground);
   }
 }
 
 @layer components {
-  .section-padding {
-    @apply py-16 md:py-24 lg:py-28;
+  .shell {
+    @apply mx-auto max-w-7xl px-6 md:px-12 lg:px-20 w-full;
   }
-  .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full;
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.2em] text-foreground/55;
   }
-  .heading-primary {
-    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-charcoal;
-    font-family: var(--font-heading);
+  .hairline-t {
+    @apply border-t border-hairline;
   }
-  .heading-secondary {
-    @apply text-xl sm:text-2xl md:text-3xl font-bold text-charcoal;
-    font-family: var(--font-heading);
+  .display-xl {
+    @apply font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.9] tracking-tight;
   }
-  .text-body {
-    @apply text-sm sm:text-base md:text-lg leading-relaxed text-charcoal-50/80;
+  .display-lg {
+    @apply font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[0.95] tracking-tight;
   }
-  .gold-gradient {
-    background: linear-gradient(135deg, #D4AF37 0%, #C5A028 50%, #A68523 100%);
+  .display-md {
+    @apply font-display text-3xl md:text-4xl font-bold leading-tight tracking-tight;
   }
-  .gold-gradient-text {
-    background: linear-gradient(135deg, #D4AF37 0%, #C5A028 50%, #A68523 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .text-balance {
+    text-wrap: balance;
   }
 }
 
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: #FAF8F5;
+  background: var(--color-background);
 }
 ::-webkit-scrollbar-thumb {
-  background: #D4AF37;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #C5A028;
+  background: var(--color-foreground);
 }
