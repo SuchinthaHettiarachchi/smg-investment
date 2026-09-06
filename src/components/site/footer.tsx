@@ -60,7 +60,7 @@ export function Footer() {
 
       {/* Massive Kinetic Marquee */}
       <div aria-hidden className="relative overflow-hidden border-t border-primary-foreground/15 py-10">
-        <div className="flex w-max items-center whitespace-nowrap will-change-transform animate-marquee-right">
+        <div className="flex w-max items-center whitespace-nowrap will-change-transform animate-marquee-left">
           {[0, 1].map((pass) => (
             <div key={pass} className="flex items-center">
               {marqueeWords.map((word, i) => (
