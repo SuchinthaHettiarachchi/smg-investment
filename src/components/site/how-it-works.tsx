@@ -8,19 +8,19 @@ const cards = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="hairline-t bg-secondary/60 py-20 md:py-32">
+    <section id="how-it-works" className="section-padding hairline-t bg-secondary/60">
       <div className="shell">
         <SectionHeader eyebrow="Simple & Transparent" heading="How It Works & Eligibility" />
 
-        <div className="mt-16 grid gap-5 lg:grid-cols-2">
+        <div className="mt-8 grid gap-4 lg:grid-cols-2">
           {cards.map((c, i) => (
             <Reveal key={c.number} delay={i * 0.12}>
-              <article className="group flex h-full flex-col justify-between rounded-sm border border-hairline bg-card p-8 transition-colors duration-500 hover:border-foreground/40 md:p-12">
+              <article className="group flex h-full flex-col justify-between rounded-sm border border-hairline bg-card p-8 transition-colors duration-500 hover:border-foreground/40 md:p-10">
                 <div className="flex items-start justify-between gap-6">
                   <h3 className="display-md max-w-[14ch]">{c.title}</h3>
                   <span className="font-display text-5xl text-gold md:text-6xl">{c.number}</span>
                 </div>
-                <p className="mt-16 max-w-lg text-base leading-relaxed text-muted-foreground md:mt-24 md:text-lg">
+                <p className="mt-8 max-w-lg text-base leading-relaxed text-muted-foreground md:mt-6 md:text-lg">
                   {c.body}
                 </p>
               </article>

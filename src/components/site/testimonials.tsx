@@ -12,7 +12,7 @@ export function Testimonials() {
   const go = (dir: number) => setIndex((i) => (i + dir + TESTIMONIALS.length) % TESTIMONIALS.length);
 
   return (
-    <section id="testimonials" className="hairline-t py-20 md:py-32">
+    <section id="testimonials" className="section-padding hairline-t">
       <div className="shell">
         <div className="flex flex-wrap items-end justify-between gap-8">
           <div>
@@ -29,13 +29,13 @@ export function Testimonials() {
           </div>
         </div>
 
-        <div className="mt-14 grid gap-10 border-t border-hairline pt-12 lg:grid-cols-12">
+        <div className="mt-8 grid gap-8 border-t border-hairline pt-8 lg:grid-cols-12">
           <AnimatePresence mode="wait">
-            <motion.figure key={index} initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }} transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }} className="contents">
+            <motion.figure key={index} initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }} transition={{ duration: 0.5, ease: "easeOut" }} className="contents">
               <div className="lg:col-span-4">
                 <div className="flex aspect-square w-full max-w-xs items-center justify-center rounded-sm border border-hairline bg-accent/60">
                   {active.image ? (
-                    <img src={active.image} alt={`${active.name}`} loading="lazy" className="size-full rounded-sm object-cover" />
+                    <img src={active.image} alt={active.name} loading="lazy" className="size-full rounded-sm object-cover" />
                   ) : (
                     <span className="font-display text-5xl text-foreground/50" aria-hidden>{active.initials}</span>
                   )}
@@ -48,12 +48,11 @@ export function Testimonials() {
                     <Star key={i} aria-hidden className={i < active.rating ? "size-4 fill-gold text-gold" : "size-4 text-muted-foreground"} />
                   ))}
                 </div>
-                <blockquote className="mt-8 font-display text-3xl leading-tight text-balance md:text-4xl">
+                <blockquote className="mt-6 font-display text-3xl leading-tight text-balance md:text-4xl">
                   “{active.quote}”
                 </blockquote>
-                <figcaption className="mt-8 flex items-center gap-4">
+                <figcaption className="mt-6 flex items-center gap-4">
                   <span className="text-base font-medium">{active.name}</span>
-                  <span aria-hidden className="h-px w-8 bg-hairline" />
                   <span className="eyebrow">{active.role}</span>
                 </figcaption>
               </div>
@@ -61,7 +60,7 @@ export function Testimonials() {
           </AnimatePresence>
         </div>
 
-        <div className="mt-10 flex gap-2">
+        <div className="mt-8 flex gap-2">
           {TESTIMONIALS.map((t, i) => (
             <button key={i} type="button" onClick={() => setIndex(i)} aria-label={`Show testimonial ${i + 1}`} aria-current={i === index} className={`h-px w-12 transition-all duration-300 ${i === index ? "bg-foreground" : "bg-hairline hover:bg-foreground/40"}`} />
           ))}

@@ -35,7 +35,7 @@ export const WHY_CHOOSE_US = [
 ];
 
 export const TESTIMONIALS = [
-  { image: null, initials: "KP", quote: "Excellent service! The staff was very professional and the process was quick and transparent. I got my loan within minutes.", name: "Kamani Perera", role: "Maharagama branch", rating: 5 },
+  { image: "/images/Image4.webp", initials: "KP", quote: "Excellent service! The staff was very professional and the process was quick and transparent. I got my loan within minutes.", name: "Kamani Perera", role: "Maharagama branch", rating: 5 },
   { image: null, initials: "RS", quote: "I've been using SMG for years. Their rates are competitive and I always feel my gold is safe with them. Highly recommend.", name: "Ranjith Silva", role: "Kottawa branch", rating: 5 },
   { image: null, initials: "NF", quote: "The gold testing technology is impressive. No damage to my jewelry and fair valuation every time. Very trustworthy.", name: "Nishadi Fernando", role: "Nugegoda branch", rating: 5 },
 ];

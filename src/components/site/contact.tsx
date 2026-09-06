@@ -23,7 +23,7 @@ export function Contact() {
   return (
     <section id="contact" className="hairline-t bg-secondary/60 py-20 md:py-32">
       <div className="shell">
-        <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
+        <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-5">
             <Reveal>
               <Eyebrow>Contact Us</Eyebrow>
@@ -40,19 +40,19 @@ export function Contact() {
                 <div className="grid gap-6 md:grid-cols-2">
                   <div>
                     <label htmlFor="name" className="eyebrow">Name</label>
-                    <input id="name" name="name" required autoComplete="name" placeholder="Your full name" className={fieldClass} />
+                    <input id="name" name="name" required autoComplete="name" placeholder="Enter your full name" className={fieldClass} />
                   </div>
                   <div>
                     <label htmlFor="email" className="eyebrow">Email</label>
-                    <input id="email" name="email" type="email" required autoComplete="email" placeholder="you@example.com" className={fieldClass} />
+                    <input id="email" name="email" type="email" required autoComplete="email" placeholder="Enter your email address" className={fieldClass} />
                   </div>
                   <div className="md:col-span-2">
                     <label htmlFor="number" className="eyebrow">Number</label>
-                    <input id="number" name="number" type="tel" required autoComplete="tel" placeholder="Contact number" className={fieldClass} />
+                    <input id="number" name="number" type="tel" required autoComplete="tel" placeholder="Enter your phone number" className={fieldClass} />
                   </div>
                   <div className="md:col-span-2">
                     <label htmlFor="message" className="eyebrow">Message</label>
-                    <textarea id="message" name="message" required rows={5} placeholder="How can we help you?" className={`${fieldClass} resize-y`} />
+                    <textarea id="message" name="message" required rows={5} placeholder="Write your message here..." className={`${fieldClass} resize-y`} />
                   </div>
                 </div>
 
@@ -65,7 +65,7 @@ export function Contact() {
           </div>
         </div>
 
-        <ul className="mt-16 grid gap-5 md:grid-cols-3">
+        <ul className="mt-8 grid gap-5 md:grid-cols-3">
           {BRANCHES.map((b, i) => (
             <Reveal key={b.name} delay={i * 0.1} className="h-full">
               <li className="h-full">

@@ -3,7 +3,7 @@ import { motion, type Variants } from "framer-motion";
 import Link from "next/link";
 
 export function Eyebrow({ children }: { children: React.ReactNode }) {
-  return <p className="eyebrow flex items-center gap-3"><span aria-hidden className="inline-block h-px w-10 bg-gold" />{children}</p>;
+  return <p className="eyebrow">{children}</p>;
 }
 
 export function LinkButton({ href, children, variant = "primary" }: { href: string; children: React.ReactNode; variant?: "primary" | "outline" }) {
@@ -32,8 +32,8 @@ export function SectionHeader({ eyebrow, heading, paragraph }: { eyebrow: string
   return (
     <Reveal>
       <Eyebrow>{eyebrow}</Eyebrow>
-      <h2 className="display-lg mt-6 max-w-[20ch] text-balance">{heading}</h2>
-      {paragraph && <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">{paragraph}</p>}
+      <h2 className="display-lg mt-4 max-w-[20ch] text-balance">{heading}</h2>
+      {paragraph && <p className="mt-4 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">{paragraph}</p>}
     </Reveal>
   );
 }
