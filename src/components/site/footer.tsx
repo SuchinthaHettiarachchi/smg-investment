@@ -65,7 +65,7 @@ export function Footer() {
             <div key={pass} className="flex items-center">
               {marqueeWords.map((word, i) => (
                 <span key={i} className="flex items-center">
-                  <span className="font-display text-5xl md:text-7xl lg:text-8xl text-primary-foreground/85 px-6">{word}</span>
+                  <span className="font-display text-5xl md:text-7xl lg:text-8xl text-primary-foreground/50 px-6">{word}</span>
                 </span>
               ))}
             </div>
