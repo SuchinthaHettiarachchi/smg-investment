@@ -1,4 +1,4 @@
-const marqueeWords = Array(8).fill("SMG INVESTING");
+const marqueeWords = Array(8).fill("SMG INVESTING.");
 
 const quickLinks = [
   { id: "home", label: "Home" },
