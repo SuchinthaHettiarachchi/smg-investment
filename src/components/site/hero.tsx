@@ -8,7 +8,7 @@ export function Hero() {
   const reduced = useReducedMotion();
 
   return (
-    <section id="home" className="relative overflow-hidden pt-32 pb-12 md:pt-40 md:pb-16">
+    <section id="home" className="relative overflow-hidden pt-36 pb-12 md:pt-40 md:pb-16">
       <div className="shell">
         <div className="grid items-end gap-8 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-7">
@@ -25,11 +25,12 @@ export function Hero() {
               ))}
             </h1>
 
-            <motion.div initial={reduced ? undefined : { opacity: 0 }} animate={reduced ? undefined : { opacity: 1 }} transition={{ duration: 0.8, delay: 0.7 }} className="mt-8 flex flex-row flex-wrap items-center gap-3">
-              <Link href="#contact" className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-gold hover:text-foreground md:px-8 md:py-4">
+            {/* Grid layout on mobile forces them side-by-side perfectly */}
+            <motion.div initial={reduced ? undefined : { opacity: 0 }} animate={reduced ? undefined : { opacity: 1 }} transition={{ duration: 0.8, delay: 0.7 }} className="mt-8 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:items-center">
+              <Link href="#contact" className="inline-flex items-center justify-center rounded-full bg-primary px-4 py-3 text-xs font-medium text-primary-foreground transition-colors hover:bg-gold hover:text-foreground md:px-8 md:py-4 md:text-sm">
                 Get a valuation
               </Link>
-              <Link href="#services" className="inline-flex items-center justify-center rounded-full border border-hairline px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary md:px-8 md:py-4">
+              <Link href="#services" className="inline-flex items-center justify-center rounded-full border border-hairline px-4 py-3 text-xs font-medium text-foreground transition-colors hover:bg-secondary md:px-8 md:py-4 md:text-sm">
                 Explore services
               </Link>
             </motion.div>
