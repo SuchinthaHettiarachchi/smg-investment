@@ -77,13 +77,26 @@ export function Contact() {
           </div>
         </div>
 
-        <ul className="mt-8 grid gap-4 md:grid-cols-3">
+        <ul className="mt-12 grid gap-8 md:grid-cols-3">
           {BRANCHES.map((b, i) => (
             <Reveal key={b.name} delay={i * 0.1} className="h-full">
-              <li className="h-full">
-                <div className="h-full rounded-sm border border-hairline bg-card p-6 transition-colors duration-500 hover:border-foreground/40">
+              <li className="h-full rounded-sm border border-hairline bg-card overflow-hidden flex flex-col transition-colors duration-500 hover:border-foreground/40">
+                
+                {/* Interactive Google Map Embed */}
+                <div className="relative w-full h-44 overflow-hidden border-b border-hairline bg-secondary">
+                  <iframe
+                    title={`Map of ${b.name}`}
+                    src={`https://maps.google.com/maps?q=${encodeURIComponent(b.address)}&z=15&output=embed`}
+                    className="absolute inset-0 w-full h-full"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
+
+                {/* Card Content */}
+                <div className="p-6 flex-grow flex flex-col">
                   <h3 className="font-display text-2xl">{b.name}</h3>
-                  <dl className="mt-4 space-y-3 text-sm">
+                  <dl className="mt-4 space-y-3 text-sm flex-grow">
                     <div>
                       <dt className="eyebrow">Opening hours</dt>
                       <dd className="mt-1 text-muted-foreground" dangerouslySetInnerHTML={{ __html: b.hours }} />
@@ -101,6 +114,17 @@ export function Contact() {
                       </dd>
                     </div>
                   </dl>
+                  
+                  {/* Get Directions Button (Opens in new tab) */}
+                  <a 
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(b.address)}`}
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-foreground/80 hover:text-gold transition-colors"
+                  >
+                    Get directions
+                    <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                  </a>
                 </div>
               </li>
             </Reveal>

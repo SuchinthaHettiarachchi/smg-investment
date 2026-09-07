@@ -19,7 +19,7 @@ export function Services() {
             </p>
           </Reveal>
           <Reveal delay={0.15}>
-            <img src="/images/Image3.webp" alt="Gold purity being tested" width={1280} height={960} loading="lazy" className="mt-6 aspect-4/3 w-full rounded-sm border border-hairline object-cover" />
+            <img src="/images/ourservices.webp" alt="Gold purity being tested" width={1280} height={960} loading="lazy" className="mt-6 aspect-4/3 w-full rounded-sm border border-hairline object-cover" />
           </Reveal>
         </div>
 
