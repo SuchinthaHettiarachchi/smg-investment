@@ -23,7 +23,7 @@ export function About() {
               Established in 1995, SMG Investment Services has been serving customers for over 30 years, building a reputation for trusted and reliable gold pawning services. Today, we operate through three conveniently located branches in Maharagama, Kottawa, and Nugegoda, making our services accessible to customers across the region.
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
-              As a partner company of Harith Engineering &amp; Company (Pvt) Ltd, we continue to uphold a commitment to professionalism, customer care, and secure gold pawning services. With decades of experience and a strong focus on transparency and confidentiality, we are dedicated to providing customers with a dependable financial partner when they need it most.
+              We continue to uphold a commitment to professionalism, customer care, and secure gold pawning services. With decades of experience and a strong focus on transparency and confidentiality, we are dedicated to providing customers with a dependable financial partner when they need it most.
             </p>
           </Reveal>
 
@@ -31,7 +31,7 @@ export function About() {
             <dl className="hairline-t mt-8 grid grid-cols-2 gap-x-8 gap-y-4 pt-6 sm:grid-cols-3">
               {[
                 { k: "Established", v: "1995" },
-                { k: "Partner company", v: "Harith Engineering" },
+                { k: "Experience", v: "30+ Years" },
                 { k: "Branch network", v: "3 locations" },
               ].map((i) => (
                 <div key={i.k}>
