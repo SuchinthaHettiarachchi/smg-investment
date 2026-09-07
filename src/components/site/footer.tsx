@@ -31,8 +31,8 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@smginvestments.lk" className="transition-colors hover:text-gold">
-                  Email: info@smginvestments.lk
+                <a href="https://mail.google.com/mail/?view=cmhref="mailto:info@smginvestments.lk"fs=1href="mailto:info@smginvestments.lk"to=info@smginvestmentservices.com" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-gold">
+                  Email: info@smginvestmentservices.com
                 </a>
               </li>
             </ul>
