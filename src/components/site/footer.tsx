@@ -8,7 +8,6 @@ export function Footer() {
       <div className="shell py-16 md:py-24">
         <div className="flex flex-col md:flex-row justify-between gap-12">
           <div className="md:max-w-sm">
-            {/* Image Logo + Text Logo */}
             <div className="flex items-center gap-4 mb-5">
               <img src="/images/logo.webp" alt="SMG" className="h-14 w-auto object-contain" />
               <p className="font-display text-2xl md:text-3xl">SMG Investment Services</p>
@@ -23,24 +22,32 @@ export function Footer() {
             <ul className="mt-6 space-y-4 text-lg">
               <li>
                 <p className="text-primary-foreground/55 text-sm">Maharagama</p>
-                <a href="tel:+94112089196" className="transition-colors hover:text-gold">
+                <a href="tel:+94112089196" className="inline-block py-1 transition-colors hover:text-gold">
                   (011) 208 9196
                 </a>
               </li>
               <li>
                 <p className="text-primary-foreground/55 text-sm">Kottawa</p>
-                <a href="tel:+94112182966" className="transition-colors hover:text-gold">
+                <a href="tel:+94112182966" className="inline-block py-1 transition-colors hover:text-gold">
                   (011) 218 2966
                 </a>
               </li>
               <li>
                 <p className="text-primary-foreground/55 text-sm">Nugegoda</p>
-                <a href="tel:+94112818299" className="transition-colors hover:text-gold">
+                <a href="tel:+94112818299" className="inline-block py-1 transition-colors hover:text-gold">
                   (011) 281 8299
                 </a>
               </li>
               <li className="pt-4">
-                <span>Email: <a href="mailto:info@smginvestmentservices.com" className="transition-colors hover:text-gold">info@smginvestmentservices.com</a></span>
+                <span className="block text-sm text-primary-foreground/55">Email</span>
+                <a 
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=info@smginvestmentservices.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-block py-1 break-all transition-colors hover:text-gold"
+                >
+                  info@smginvestmentservices.com
+                </a>
               </li>
             </ul>
           </div>
@@ -68,11 +75,7 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Kinetic band below the footer */}
-      <div
-        aria-hidden
-        className="relative overflow-hidden border-t border-primary-foreground/15 py-6"
-      >
+      <div aria-hidden className="relative overflow-hidden border-t border-primary-foreground/15 py-6">
         <div className="flex w-max items-center gap-12 whitespace-nowrap will-change-transform animate-marquee">
           {[0, 1].map((pass) => (
             <div key={pass} className="flex items-center gap-12">
