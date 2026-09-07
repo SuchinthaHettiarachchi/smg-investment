@@ -2,14 +2,9 @@
 import { useState, type FormEvent } from "react";
 import { toast } from "sonner";
 import { Eyebrow, Reveal } from "./primitives";
+import { BRANCHES } from "@/constants/data";
 
 const fieldClass = "mt-2 w-full rounded-sm border border-hairline bg-card px-4 py-3.5 text-base text-foreground placeholder:text-muted-foreground/70 transition-colors focus:border-foreground focus:outline-none";
-
-const branches = [
-  { name: "Maharagama", phone: "(011) 208 9196" },
-  { name: "Kottawa", phone: "(011) 218 2966" },
-  { name: "Nugegoda", phone: "(011) 281 8299" },
-];
 
 export function Contact() {
   const [sending, setSending] = useState(false);
@@ -83,14 +78,29 @@ export function Contact() {
         </div>
 
         <ul className="mt-8 grid gap-4 md:grid-cols-3">
-          {branches.map((b, i) => (
+          {BRANCHES.map((b, i) => (
             <Reveal key={b.name} delay={i * 0.1} className="h-full">
               <li className="h-full">
                 <div className="h-full rounded-sm border border-hairline bg-card p-6 transition-colors duration-500 hover:border-foreground/40">
                   <h3 className="font-display text-2xl">{b.name}</h3>
-                  <a href={`tel:${b.phone.replace(/\s/g, "")}`} className="block mt-4 text-gold-600 hover:text-foreground transition-colors">
-                    {b.phone}
-                  </a>
+                  <dl className="mt-4 space-y-3 text-sm">
+                    <div>
+                      <dt className="eyebrow">Opening hours</dt>
+                      <dd className="mt-1 text-muted-foreground" dangerouslySetInnerHTML={{ __html: b.hours }} />
+                    </div>
+                    <div>
+                      <dt className="eyebrow">Address</dt>
+                      <dd className="mt-1 text-muted-foreground">{b.address}</dd>
+                    </div>
+                    <div>
+                      <dt className="eyebrow">Hotline</dt>
+                      <dd className="mt-1 text-foreground">
+                        <a href={`tel:${b.hotline.replace(/\s/g, "")}`} className="hover:text-gold transition-colors">
+                          {b.hotline}
+                        </a>
+                      </dd>
+                    </div>
+                  </dl>
                 </div>
               </li>
             </Reveal>
