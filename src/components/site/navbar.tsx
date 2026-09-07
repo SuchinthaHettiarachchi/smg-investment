@@ -22,23 +22,19 @@ export function Navbar() {
 
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? "border-b border-hairline bg-background/85 backdrop-blur-xl" : "border-b border-transparent bg-transparent"}`}>
-      {/* Removed all padding from nav container to allow edge-to-edge control */}
       <nav className="max-w-[1600px] mx-auto h-20 flex items-center justify-between" aria-label="Main">
         
-        {/* LEFT SIDE: Brand Logo (Pulled to the left edge) */}
-        <a 
-          href="#home" 
-          className="flex items-baseline gap-2.5 ml-2 md:ml-4" 
-          onClick={() => setOpen(false)}
-        >
-          <span className="font-display text-2xl leading-none tracking-tight">SMG</span>
-          <span className="eyebrow hidden sm:block">Investment Services</span>
+        {/* Image Logo + Text Logo */}
+        <a href="#home" className="flex items-center gap-3 ml-2 md:ml-4" onClick={() => setOpen(false)}>
+          <img src="/images/logo.webp" alt="SMG" className="h-10 w-auto object-contain" />
+          <div className="flex flex-col leading-none">
+            <span className="font-display text-2xl tracking-tight">SMG</span>
+            <span className="eyebrow hidden sm:block mt-1">Investment Services</span>
+          </div>
         </a>
 
-        {/* RIGHT SIDE: Links + Button + Mobile Menu (Pulled to the right edge) */}
         <div className="flex items-center gap-6 lg:gap-8 mr-2 md:mr-4">
           
-          {/* Desktop Links */}
           <ul className="hidden items-center gap-8 lg:flex">
             {SECTIONS.slice(1, 6).map((s) => (
               <li key={s.id}>
@@ -52,7 +48,6 @@ export function Navbar() {
             ))}
           </ul>
 
-          {/* Talk to us Button */}
           <a 
             href="#contact" 
             className="hidden rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors duration-300 hover:bg-gold hover:text-foreground sm:inline-flex"
@@ -60,7 +55,6 @@ export function Navbar() {
             Talk to us
           </a>
 
-          {/* Mobile Hamburger */}
           <button 
             type="button" 
             aria-label={open ? "Close menu" : "Open menu"} 
@@ -79,7 +73,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -8 }} 
             animate={{ opacity: 1, y: 0 }} 
             exit={{ opacity: 0, y: -8 }} 
-            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }} 
+            transition={{ duration: 0.35, ease: "easeOut" }} 
             className="hairline-t max-h-[calc(100dvh-5rem)] overflow-y-auto bg-background lg:hidden"
           >
             <ul className="shell flex flex-col py-4">

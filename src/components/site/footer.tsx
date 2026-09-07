@@ -8,8 +8,12 @@ export function Footer() {
       <div className="shell py-16 md:py-24">
         <div className="flex flex-col md:flex-row justify-between gap-12">
           <div className="md:max-w-sm">
-            <p className="font-display text-4xl md:text-5xl">SMG Investment Services</p>
-            <p className="mt-5 max-w-sm text-sm leading-relaxed text-primary-foreground/65">
+            {/* Image Logo + Text Logo */}
+            <div className="flex items-center gap-4 mb-5">
+              <img src="/images/logo.webp" alt="SMG" className="h-14 w-auto object-contain" />
+              <p className="font-display text-2xl md:text-3xl">SMG Investment Services</p>
+            </div>
+            <p className="max-w-sm text-sm leading-relaxed text-primary-foreground/65">
               Trusted Gold Pawning in Sri Lanka.
             </p>
           </div>

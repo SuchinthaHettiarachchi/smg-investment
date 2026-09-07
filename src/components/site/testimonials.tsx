@@ -51,9 +51,8 @@ export function Testimonials() {
                 <blockquote className="mt-6 font-display text-3xl leading-tight text-balance md:text-4xl">
                   “{active.quote}”
                 </blockquote>
-                <figcaption className="mt-6 flex items-center gap-4">
+                <figcaption className="mt-6">
                   <span className="text-base font-medium">{active.name}</span>
-                  <span className="eyebrow">{active.role}</span>
                 </figcaption>
               </div>
             </motion.figure>

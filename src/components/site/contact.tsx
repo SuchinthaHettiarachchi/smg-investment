@@ -2,9 +2,14 @@
 import { useState, type FormEvent } from "react";
 import { toast } from "sonner";
 import { Eyebrow, Reveal } from "./primitives";
-import { BRANCHES } from "@/constants/data";
 
 const fieldClass = "mt-2 w-full rounded-sm border border-hairline bg-card px-4 py-3.5 text-base text-foreground placeholder:text-muted-foreground/70 transition-colors focus:border-foreground focus:outline-none";
+
+const branches = [
+  { name: "Maharagama", phone: "(011) 208 9196" },
+  { name: "Kottawa", phone: "(011) 218 2966" },
+  { name: "Nugegoda", phone: "(011) 281 8299" },
+];
 
 export function Contact() {
   const [sending, setSending] = useState(false);
@@ -14,20 +19,15 @@ export function Contact() {
     setSending(true);
     const form = event.currentTarget;
     
-    // Get form data
     const formData = new FormData(form);
     const name = formData.get("name");
     const email = formData.get("email");
     const number = formData.get("number");
     const message = formData.get("message");
 
-    // Format the email body
     const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0APhone: ${number}%0D%0A%0D%0AMessage:%0D%0A${message}`;
-    
-    // Create the mailto link
     const mailtoLink = `mailto:info@smginvestmentservices.com?subject=New Inquiry from ${name}&body=${body}`;
     
-    // Open the email client
     window.location.href = mailtoLink;
 
     window.setTimeout(() => {
@@ -83,25 +83,14 @@ export function Contact() {
         </div>
 
         <ul className="mt-8 grid gap-4 md:grid-cols-3">
-          {BRANCHES.map((b, i) => (
+          {branches.map((b, i) => (
             <Reveal key={b.name} delay={i * 0.1} className="h-full">
               <li className="h-full">
                 <div className="h-full rounded-sm border border-hairline bg-card p-6 transition-colors duration-500 hover:border-foreground/40">
                   <h3 className="font-display text-2xl">{b.name}</h3>
-                  <dl className="mt-4 space-y-3 text-sm">
-                    <div>
-                      <dt className="eyebrow">Opening hours</dt>
-                      <dd className="mt-1 text-muted-foreground" dangerouslySetInnerHTML={{ __html: b.hours }} />
-                    </div>
-                    <div>
-                      <dt className="eyebrow">Address</dt>
-                      <dd className="mt-1 text-muted-foreground">{b.address}</dd>
-                    </div>
-                    <div>
-                      <dt className="eyebrow">Hotline</dt>
-                      <dd className="mt-1 text-foreground">{b.hotline}</dd>
-                    </div>
-                  </dl>
+                  <a href={`tel:${b.phone.replace(/\s/g, "")}`} className="block mt-4 text-gold-600 hover:text-foreground transition-colors">
+                    {b.phone}
+                  </a>
                 </div>
               </li>
             </Reveal>
