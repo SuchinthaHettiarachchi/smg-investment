@@ -10,7 +10,7 @@ export function Footer() {
           <div className="md:max-w-sm">
             <div className="flex items-center gap-4 mb-5">
               <img src="/images/logo.webp" alt="SMG" className="h-14 w-auto object-contain" />
-              <p className="font-display text-2xl md:text-3xl">SMG Investment Services</p>
+              <p className="font-display text-xl md:text-2xl">SMG Investment Services</p>
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-primary-foreground/65">
               Trusted Gold Pawning in Sri Lanka.
