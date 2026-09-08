@@ -24,13 +24,9 @@ export function Navbar() {
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? "border-b border-hairline bg-background/85 backdrop-blur-xl" : "border-b border-transparent bg-transparent"}`}>
       <nav className="max-w-[1600px] mx-auto h-20 flex items-center justify-between" aria-label="Main">
         
-        {/* Image Logo + Text Logo */}
-        <a href="#home" className="flex items-center gap-3 ml-2 md:ml-4" onClick={() => setOpen(false)}>
-          <img src="/images/logo.webp" alt="SMG" className="h-10 w-auto object-contain" />
-          <div className="flex flex-col leading-none">
-            <span className="font-display text-2xl tracking-tight">SMG</span>
-            <span className="eyebrow hidden sm:block mt-1">Investment Services</span>
-          </div>
+        {/* Logo Image Only with Rounded Corners */}
+        <a href="#home" className="flex items-center ml-2 md:ml-4" onClick={() => setOpen(false)}>
+          <img src="/images/logo.webp" alt="SMG Logo" className="h-10 w-auto object-contain rounded-xl" />
         </a>
 
         <div className="flex items-center gap-6 lg:gap-8 mr-2 md:mr-4">
