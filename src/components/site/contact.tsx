@@ -26,7 +26,7 @@ export function Contact() {
       })
       .then(
         () => {
-          toast.success("Thank you for reaching out! We will get back to you shortly.");
+          toast.success("Thank you! Your message has been sent.");
           form.reset();
           setSending(false);
         },
