@@ -2,6 +2,7 @@
 import { useState, type FormEvent } from "react";
 import { toast } from "sonner";
 import emailjs from "@emailjs/browser";
+import { MapPin, Clock, Phone, Navigation } from "lucide-react";
 import { Eyebrow, Reveal } from "./primitives";
 import { BRANCHES } from "@/constants/data";
 
@@ -15,8 +16,7 @@ export function Contact() {
     setSending(true);
     const form = event.currentTarget;
 
-    // PASTE YOUR 3 IDs HERE
-    const SERVICE_ID = "service_cvb290p";
+     const SERVICE_ID = "service_cvb290p";
     const TEMPLATE_ID = "template_28tx0mf";
     const PUBLIC_KEY = "hGkMq3Sm_VjmminhS";
 
@@ -26,7 +26,7 @@ export function Contact() {
       })
       .then(
         () => {
-          toast.success("Thank you! Your message has been sent.");
+          toast.success("Thank you for reaching out! We will get back to you shortly.");
           form.reset();
           setSending(false);
         },
@@ -99,34 +99,33 @@ export function Contact() {
                 </div>
 
                 <div className="p-6 flex-grow flex flex-col">
-                  <h3 className="font-display text-2xl">{b.name}</h3>
-                  <dl className="mt-4 space-y-3 text-sm flex-grow">
-                    <div>
-                      <dt className="eyebrow">Opening hours</dt>
-                      <dd className="mt-1 text-muted-foreground" dangerouslySetInnerHTML={{ __html: b.hours }} />
-                    </div>
-                    <div>
-                      <dt className="eyebrow">Address</dt>
-                      <dd className="mt-1 text-muted-foreground">{b.address}</dd>
-                    </div>
-                    <div>
-                      <dt className="eyebrow">Hotline</dt>
-                      <dd className="mt-1 text-foreground">
-                        <a href={`tel:${b.hotline.replace(/\s/g, "")}`} className="hover:text-gold transition-colors">
-                          {b.hotline}
-                        </a>
-                      </dd>
-                    </div>
-                  </dl>
+                  <h3 className="font-display text-2xl mb-4">{b.name}</h3>
                   
+                  <div className="space-y-3 text-sm text-muted-foreground">
+                    <div className="flex items-start gap-3">
+                      <Clock className="size-4 mt-0.5 text-foreground/40 flex-shrink-0" />
+                      <div dangerouslySetInnerHTML={{ __html: b.hours }} />
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <MapPin className="size-4 mt-0.5 text-foreground/40 flex-shrink-0" />
+                      <span>{b.address}</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Phone className="size-4 text-foreground/40 flex-shrink-0" />
+                      <a href={`tel:${b.hotline.replace(/\s/g, "")}`} className="text-foreground hover:text-gold transition-colors">
+                        {b.hotline}
+                      </a>
+                    </div>
+                  </div>
+
                   <a 
                     href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(b.address)}`}
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-foreground/80 hover:text-gold transition-colors"
+                    className="group mt-6 pt-4 border-t border-hairline inline-flex items-center justify-center gap-2 text-sm font-medium text-foreground hover:text-gold transition-colors"
                   >
+                    <Navigation className="size-4" />
                     Get directions
-                    <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                   </a>
                 </div>
               </li>
