@@ -1,6 +1,10 @@
 import { SECTIONS } from "@/constants/data";
 
-const marqueeWords = Array(8).fill("SMG INVESTNG.");
+const marqueeWords = [
+  "SMG Investment Services.",
+  "Since 1995.",
+  "Trusted Gold Pawning."
+];
 
 export function Footer() {
   return (
