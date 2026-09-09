@@ -1,6 +1,7 @@
 "use client";
 import { useState, type FormEvent } from "react";
 import { toast } from "sonner";
+import emailjs from "@emailjs/browser";
 import { Eyebrow, Reveal } from "./primitives";
 import { BRANCHES } from "@/constants/data";
 
@@ -13,23 +14,28 @@ export function Contact() {
     event.preventDefault();
     setSending(true);
     const form = event.currentTarget;
-    
-    const formData = new FormData(form);
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const number = formData.get("number");
-    const message = formData.get("message");
 
-    const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0APhone: ${number}%0D%0A%0D%0AMessage:%0D%0A${message}`;
-    const mailtoLink = `mailto:info@smginvestmentservices.com?subject=New Inquiry from ${name}&body=${body}`;
-    
-    window.location.href = mailtoLink;
+    // PASTE YOUR 3 IDs HERE
+    const SERVICE_ID = "service_cvb290p";
+    const TEMPLATE_ID = "template_28tx0mf";
+    const PUBLIC_KEY = "hGkMq3Sm_VjmminhS";
 
-    window.setTimeout(() => {
-      setSending(false);
-      form.reset();
-      toast.success("Thank you — your email client should now be open.");
-    }, 600);
+    emailjs
+      .sendForm(SERVICE_ID, TEMPLATE_ID, form, {
+        publicKey: PUBLIC_KEY,
+      })
+      .then(
+        () => {
+          toast.success("Thank you for reaching out! We will get back to you shortly.");
+          form.reset();
+          setSending(false);
+        },
+        (error) => {
+          console.error("EmailJS error:", error);
+          toast.error("Something went wrong. Please try again.");
+          setSending(false);
+        }
+      );
   };
 
   return (
@@ -69,7 +75,7 @@ export function Contact() {
                 </div>
 
                 <button type="submit" disabled={sending} className="group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-medium text-primary-foreground transition-colors duration-300 hover:bg-gold hover:text-foreground disabled:opacity-70 sm:w-auto">
-                  {sending ? "Opening email..." : "Send message"}
+                  {sending ? "Sending..." : "Send message"}
                   <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </button>
               </form>
@@ -82,7 +88,6 @@ export function Contact() {
             <Reveal key={b.name} delay={i * 0.1} className="h-full">
               <li className="h-full rounded-sm border border-hairline bg-card overflow-hidden flex flex-col transition-colors duration-500 hover:border-foreground/40">
                 
-                {/* Interactive Google Map Embed */}
                 <div className="relative w-full h-44 overflow-hidden border-b border-hairline bg-secondary">
                   <iframe
                     title={`Map of ${b.name}`}
@@ -93,7 +98,6 @@ export function Contact() {
                   ></iframe>
                 </div>
 
-                {/* Card Content */}
                 <div className="p-6 flex-grow flex flex-col">
                   <h3 className="font-display text-2xl">{b.name}</h3>
                   <dl className="mt-4 space-y-3 text-sm flex-grow">
@@ -115,7 +119,6 @@ export function Contact() {
                     </div>
                   </dl>
                   
-                  {/* Get Directions Button (Opens in new tab) */}
                   <a 
                     href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(b.address)}`}
                     target="_blank" 
