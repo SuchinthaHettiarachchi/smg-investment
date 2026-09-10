@@ -35,7 +35,7 @@ export const WHY_CHOOSE_US = [
 ];
 
 export const TESTIMONIALS = [
-  { image: "/images/Image4.webp", initials: "KP", quote: "Excellent service! The staff was very professional and the process was quick and transparent. I got my loan within minutes.", name: "Kamani Perera", rating: 5 },
+  { image: "/images/Image4.webp", initials: "KP", quote: "Excellent service! The staff are very professional and the process was quick and transparent. I got my loan within minutes.", name: "Kamani Perera", rating: 5 },
   { image: "/images/testimonial2.webp", initials: "RS", quote: "I've been using SMG for years. Their rates are competitive and I always feel my gold is safe with them. Highly recommend.", name: "Ranjith Silva", rating: 5 },
   { image: "/images/testimonial3.webp", initials: "NF", quote: "The gold testing technology is impressive. No damage to my jewelry and fair valuation every time. Very trustworthy.", name: "Nishadi Fernando", rating: 5 },
 ];
