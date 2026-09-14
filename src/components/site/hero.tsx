@@ -1,6 +1,6 @@
 "use client";
 import { motion, useReducedMotion } from "framer-motion";
-import Link from "next/link";
+import { LinkButton } from "./primitives";
 
 const words = "Get the Financial Support You Need, With the Value of Your Gold".split(" ");
 
@@ -8,9 +8,10 @@ export function Hero() {
   const reduced = useReducedMotion();
 
   return (
-    <section id="home" className="relative overflow-hidden pt-36 pb-12 md:pt-40 md:pb-16">
+    <section id="home" className="relative overflow-hidden pt-24 pb-12 md:pt-28 md:pb-16">
       <div className="shell">
-        <div className="grid items-end gap-8 lg:grid-cols-12 lg:gap-10">
+        {/* Changed items-end to items-center so the image moves up and is visible immediately */}
+        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-7">
             <motion.p initial={reduced ? undefined : { opacity: 0, y: 12 }} animate={reduced ? undefined : { opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="eyebrow">
               Trusted Gold Pawning in Sri Lanka
@@ -25,14 +26,9 @@ export function Hero() {
               ))}
             </h1>
 
-            {/* Grid layout on mobile forces them side-by-side perfectly */}
-            <motion.div initial={reduced ? undefined : { opacity: 0 }} animate={reduced ? undefined : { opacity: 1 }} transition={{ duration: 0.8, delay: 0.7 }} className="mt-8 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:items-center">
-              <Link href="#contact" className="inline-flex items-center justify-center rounded-full bg-primary px-4 py-3 text-xs font-medium text-primary-foreground transition-colors hover:bg-gold hover:text-foreground md:px-8 md:py-4 md:text-sm">
-                Get a valuation
-              </Link>
-              <Link href="#services" className="inline-flex items-center justify-center rounded-full border border-hairline px-4 py-3 text-xs font-medium text-foreground transition-colors hover:bg-secondary md:px-8 md:py-4 md:text-sm">
-                Explore services
-              </Link>
+            <motion.div initial={reduced ? undefined : { opacity: 0 }} animate={reduced ? undefined : { opacity: 1 }} transition={{ duration: 0.8, delay: 0.7 }} className="mt-8 flex flex-wrap items-center gap-3">
+              <LinkButton href="#contact">Get a valuation</LinkButton>
+              <LinkButton href="#services" variant="outline">Explore services</LinkButton>
             </motion.div>
 
             <motion.dl initial={reduced ? undefined : { opacity: 0, y: 16 }} animate={reduced ? undefined : { opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.85 }} className="hairline-t mt-10 grid grid-cols-3 gap-6 pt-6">
@@ -59,6 +55,10 @@ export function Hero() {
               </div>
             </div>
           </motion.div>
+        </div>
+
+        <div className="hairline-t mt-12 flex items-center justify-center pt-6">
+          <p className="eyebrow hidden md:block">Maharagama · Kottawa · Nugegoda</p>
         </div>
       </div>
     </section>

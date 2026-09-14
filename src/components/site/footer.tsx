@@ -61,10 +61,7 @@ export function Footer() {
             <ul className="mt-6 grid grid-cols-2 gap-y-3 text-sm lg:grid-cols-1 lg:justify-items-end">
               {SECTIONS.map((s) => (
                 <li key={s.id}>
-                  <a
-                    href={`#${s.id}`}
-                    className="text-primary-foreground/75 transition-colors hover:text-gold"
-                  >
+                  <a href={`#${s.id}`} className="text-primary-foreground/75 transition-colors hover:text-gold">
                     {s.label}
                   </a>
                 </li>
@@ -73,9 +70,9 @@ export function Footer() {
           </nav>
         </div>
 
-        <div className="mt-16 flex flex-wrap items-center justify-between gap-4 border-t border-primary-foreground/15 pt-6 text-xs text-primary-foreground/55">
+        <div className="mt-16 flex flex-col md:flex-row justify-between items-center gap-4 border-t border-primary-foreground/15 pt-6 text-xs text-primary-foreground/55">
           <p>© {new Date().getFullYear()} SMG Investment Services. All rights reserved.</p>
-          <p>Maharagama · Kottawa · Nugegoda</p>
+          <p>Designed and Developed by <a href="https://www.karalliyaddaone.com/" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-foreground/75 hover:text-gold transition-colors">K1</a></p>
         </div>
       </div>
 

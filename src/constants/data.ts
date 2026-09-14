@@ -9,9 +9,9 @@ export const SECTIONS = [
 ];
 
 export const BRANCHES = [
-  { name: "Maharagama Branch", hours: "Mon-Sat: 8:30 am - 6:00 pm<br>Sun: 8:30 am - 2:00 pm", address: "No. 203, Highlevel Road, Wattegedara, Maharagama", hotline: "(011) 208 9196" },
-  { name: "Kottawa Branch", hours: "Mon-Sat: 8:30 am - 6:00 pm<br>Sun: 8:30 am - 2:00 pm", address: "138/1/C, Highlevel Road, Kottawa", hotline: "(011) 218 2966" },
-  { name: "Nugegoda Branch", hours: "Mon-Sat: 8:30 am - 6:00 pm<br>Sun: 8:30 am - 2:00 pm", address: "No. 37, Subhadrarama Rd, Nugegoda", hotline: "(011) 281 8299" },
+  { name: "Maharagama Branch", hours: "Mon-Sat: 8:30 am - 6:00 pm<br>Sun: 8:30 am - 2:00 pm", address: "No. 203, Highlevel Road, Wattegedara, Maharagama", hotline: "(011) 208 9196", mapLink: "https://www.google.com/maps/search/?api=1&query=No.+203,+Highlevel+Road,+Wattegedara,+Maharagama" },
+  { name: "Kottawa Branch", hours: "Mon-Sat: 8:30 am - 6:00 pm<br>Sun: 8:30 am - 2:00 pm", address: "138/1/C, Highlevel Road, Kottawa", hotline: "(011) 218 2966", mapLink: "https://www.google.com/maps/search/?api=1&query=138/1/C,+Highlevel+Road,+Kottawa" },
+  { name: "Nugegoda Branch", hours: "Mon-Sat: 8:30 am - 6:00 pm<br>Sun: 8:30 am - 2:00 pm", address: "No. 37, Subhadrarama Rd, Nugegoda", hotline: "(011) 281 8299", mapLink: "https://maps.app.goo.gl/vhiYoRk9Bb3QG65NA" },
 ];
 
 export const SERVICES = [

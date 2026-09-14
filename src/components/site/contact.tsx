@@ -16,7 +16,7 @@ export function Contact() {
     setSending(true);
     const form = event.currentTarget;
 
-     const SERVICE_ID = "service_cvb290p";
+    const SERVICE_ID = "service_cvb290p";
     const TEMPLATE_ID = "template_28tx0mf";
     const PUBLIC_KEY = "hGkMq3Sm_VjmminhS";
 
@@ -119,7 +119,7 @@ export function Contact() {
                   </div>
 
                   <a 
-                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(b.address)}`}
+                    href={b.mapLink}
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="group mt-6 pt-4 border-t border-hairline inline-flex items-center justify-center gap-2 text-sm font-medium text-foreground hover:text-gold transition-colors"
