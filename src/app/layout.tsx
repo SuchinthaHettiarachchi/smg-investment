@@ -8,9 +8,6 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["300", "400", "500", "600
 export const metadata: Metadata = {
   title: "SMG Investment Services | Trusted Gold Pawning in Sri Lanka",
   description: "Get the financial support you need with the value of your gold. Over 30 years of trusted gold pawning services in Maharagama, Kottawa, and Nugegoda.",
-  icons: {
-    icon: '/favicon.ico',
-  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
