@@ -17,7 +17,7 @@ export function Footer() {
               <p className="font-display text-xl md:text-2xl">SMG Investment Services</p>
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-primary-foreground/65">
-              Trusted Gold Pawning in Sri Lanka.
+              SMG Investment Services offers trusted gold pawning, gold valuation and financial assistance in Maharagama, Kottawa, Nugegoda, Sri Lanka.
             </p>
           </div>
 
