@@ -91,7 +91,7 @@ export function Contact() {
                 <div className="relative w-full h-44 overflow-hidden border-b border-hairline bg-secondary">
                   <iframe
                     title={`Map of ${b.name}`}
-                    src={`https://maps.google.com/maps?q=${encodeURIComponent(b.address)}&z=15&output=embed`}
+                    src={b.mapEmbed}
                     className="absolute inset-0 w-full h-full"
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"

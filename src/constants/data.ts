@@ -9,9 +9,30 @@ export const SECTIONS = [
 ];
 
 export const BRANCHES = [
-  { name: "Maharagama Branch", hours: "Mon-Sat: 8:30 am - 6:00 pm<br>Sun: 8:30 am - 2:00 pm", address: "No. 203, Highlevel Road, Wattegedara, Maharagama", hotline: "(011) 208 9196", mapLink: "https://maps.app.goo.gl/7tGAi11qsrqN3nQh7?g_st=iw" },
-  { name: "Kottawa Branch", hours: "Mon-Sat: 8:30 am - 6:00 pm<br>Sun: 8:30 am - 2:00 pm", address: "138/1/C, Highlevel Road, Kottawa", hotline: "(011) 218 2966", mapLink: "https://maps.app.goo.gl/wtq6DiFC5RR99Cpf6?g_st=iw" },
-  { name: "Nugegoda Branch", hours: "Mon-Sat: 8:30 am - 6:00 pm<br>Sun: 8:30 am - 2:00 pm", address: "No. 37, Subhadrarama Rd, Nugegoda", hotline: "(011) 281 8299", mapLink: "https://maps.app.goo.gl/vhiYoRk9Bb3QG65NA?g_st=iw" },
+  { 
+    name: "Maharagama Branch", 
+    hours: "Mon-Sat: 8:30 am - 6:00 pm<br>Sun: 8:30 am - 2:00 pm", 
+    address: "No. 203, Highlevel Road, Wattegedara, Maharagama", 
+    hotline: "(011) 208 9196", 
+    mapLink: "https://maps.app.goo.gl/7tGAi11qsrqN3nQh7?g_st=iw",
+    mapEmbed: "https://maps.google.com/maps?q=6.8510833,79.9211111&z=15&output=embed"
+  },
+  { 
+    name: "Kottawa Branch", 
+    hours: "Mon-Sat: 8:30 am - 6:00 pm<br>Sun: 8:30 am - 2:00 pm", 
+    address: "138/1/C, Highlevel Road, Kottawa", 
+    hotline: "(011) 218 2966", 
+    mapLink: "https://maps.app.goo.gl/wtq6DiFC5RR99Cpf6?g_st=iw",
+    mapEmbed: "https://maps.google.com/maps?q=6.8404444,79.9667500&z=15&output=embed"
+  },
+  { 
+    name: "Nugegoda Branch", 
+    hours: "Mon-Sat: 8:30 am - 6:00 pm<br>Sun: 8:30 am - 2:00 pm", 
+    address: "No. 37, Subhadrarama Rd, Nugegoda", 
+    hotline: "(011) 281 8299", 
+    mapLink: "https://maps.app.goo.gl/vhiYoRk9Bb3QG65NA?g_st=iw",
+    mapEmbed: "https://maps.google.com/maps?q=6.8729167,79.8920278&z=15&output=embed"
+  }
 ];
 
 export const SERVICES = [
@@ -35,7 +56,7 @@ export const WHY_CHOOSE_US = [
 ];
 
 export const TESTIMONIALS = [
-  { image: "/images/Image4.webp", initials: "KP", quote: "Excellent service! The staff were very professional and the process was quick and transparent. I got my loan within minutes.", name: "Kamani Perera", rating: 5 },
+  { image: "/images/Image4.webp", initials: "KP", quote: "Excellent service! The staff was very professional and the process was quick and transparent. I got my loan within minutes.", name: "Kamani Perera", rating: 5 },
   { image: "/images/testimonial2.webp", initials: "RS", quote: "I've been using SMG for years. Their rates are competitive and I always feel my gold is safe with them. Highly recommend.", name: "Ranjith Silva", rating: 5 },
   { image: "/images/testimonial3.webp", initials: "NF", quote: "The gold testing technology is impressive. No damage to my jewelry and fair valuation every time. Very trustworthy.", name: "Nishadi Fernando", rating: 5 },
 ];
