@@ -21,7 +21,6 @@ export function Contact() {
     const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
     if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
-      console.error("EmailJS env vars are missing.");
       toast.error("Something went wrong. Please try again.");
       setSending(false);
       return;
@@ -33,13 +32,16 @@ export function Contact() {
       })
       .then(
         () => {
-          toast.success("Thank you for reaching out! We will get back to you shortly.");
+          toast.success("Thank you for reaching out!", {
+            description: "We've received your message and will get back to you shortly.",
+          });
           form.reset();
           setSending(false);
         },
-        (error) => {
-          console.error("EmailJS error:", error);
-          toast.error("Something went wrong. Please try again.");
+        () => {
+          toast.error("Something went wrong.", {
+            description: "Please try again, or call us directly if the issue persists.",
+          });
           setSending(false);
         }
       );
