@@ -16,9 +16,16 @@ export function Contact() {
     setSending(true);
     const form = event.currentTarget;
 
-    const SERVICE_ID = "service_cvb290p";
-    const TEMPLATE_ID = "template_28tx0mf";
-    const PUBLIC_KEY = "hGkMq3Sm_VjmminhS";
+    const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+      console.error("EmailJS env vars are missing.");
+      toast.error("Something went wrong. Please try again.");
+      setSending(false);
+      return;
+    }
 
     emailjs
       .sendForm(SERVICE_ID, TEMPLATE_ID, form, {
